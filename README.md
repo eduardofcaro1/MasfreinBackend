@@ -20,7 +20,12 @@ spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
 Caso o banco de dados não seja criado automaticamente, siga os passos abaixo:
 
 1. Importe o arquivo `importacao.sql` no MySQL para criar o banco de dados e as tabelas necessárias.
-2. Após a importação, execute os seguintes comandos SQL para inserir os dados iniciais.
+2. Após a importação, execute os seguintes comandos SQL para inserir os dados iniciais:
+
+```sql
+INSERT INTO projeto.instituicao (id, nome, key, flg_ativo) VALUES(1, 'IFSP Catanduva', 'ifsp', 'S');
+INSERT INTO projeto.usuario_dashboard (id, dsc_usuario, senha_usuario, flg_ativo, celular, nome_usuario, instituicao_id, is_admin, flg_professor, flg_mobile) VALUES(15, 'if', '$2a$10$kk0oSMBpu0523VQCCbkRZOJfIQZhj4eK2UHB4R2PNoq2TMCw5SiGy', 'S', '44411', 'if', 1, 1, 0, 0);
+```
 
 ### Login Inicial
 Após a configuração do banco de dados, você pode acessar o sistema com as seguintes credenciais:
